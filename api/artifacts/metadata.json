@@ -1,0 +1,293 @@
+{
+  "model_version": "1.0.0",
+  "trained_at": "2026-10-24T04:16:22Z",
+  "data_hash": "a64ba38f50f5",
+  "model_name": "Lasso",
+  "model_params": {
+    "alpha": 0.5
+  },
+  "feature_set": "A: calendar",
+  "use_lags": false,
+  "features": [
+    "t",
+    "day_of_week",
+    "is_weekend",
+    "day_of_month",
+    "week_of_year",
+    "month",
+    "quarter",
+    "day_of_year",
+    "is_month_start",
+    "is_month_end",
+    "is_quarter_end",
+    "is_december",
+    "year_sin",
+    "year_cos",
+    "year_sin2",
+    "year_cos2",
+    "week_sin",
+    "week_cos",
+    "month_sin",
+    "month_cos"
+  ],
+  "origin": "2011-01-21",
+  "cap_value": 15991.36288199998,
+  "horizon_days": 90,
+  "history_start": "2011-01-21",
+  "history_end": "2014-09-29",
+  "forecast_start": "2014-09-30",
+  "forecast_end": "2014-12-28",
+  "n_training_days": 1348,
+  "validation_metrics": {
+    "RMSE": 4606.968173721525,
+    "WAPE_7d": 43.957234127249826,
+    "WAPE_30d": 27.368057783002666,
+    "Total90_abs": 14.471672642922195
+  },
+  "test_metrics": {
+    "MAE": 3016.6986843453747,
+    "RMSE": 4411.698302100272,
+    "R2": -0.07620046757940302,
+    "WAPE_7d": 143.6303639198653,
+    "WAPE_30d": 71.417883947349,
+    "Total90_err": 71.41788394734898
+  },
+  "best_baseline": {
+    "model": "Baseline: mean of last 90 days",
+    "RMSE": 4642.354294068166,
+    "WAPE_7d": 50.00831907773924,
+    "WAPE_30d": 33.3722424194297,
+    "Total90_err": 5.095998767835524
+  },
+  "intervals": {
+    "daily": {
+      "q05": -2907.30841871026,
+      "q95": 7012.002435415238
+    },
+    "weekly": {
+      "q05": -17879.95666409774,
+      "q95": 15384.575320642121
+    },
+    "30day": {
+      "q05": -49412.947982520025,
+      "q95": 48753.48184039968
+    },
+    "90day": {
+      "q05": -90623.0945493245,
+      "q95": 73049.4587101221
+    }
+  },
+  "feature_importance": {
+    "month_sin": 39.171739897677476,
+    "year_sin": 26.275594355044813,
+    "month_cos": 13.07041545656586,
+    "day_of_year": 11.712965123160581,
+    "is_december": 6.998385533536783,
+    "day_of_month": 0.5901895929152458,
+    "is_month_end": 0.4615425167457346,
+    "year_sin2": 0.41256463681449185,
+    "is_weekend": 0.4112440889861306,
+    "year_cos2": 0.37396419805344616,
+    "week_sin": 0.20367347309694178,
+    "is_quarter_end": 0.15655049283613123,
+    "year_cos": 0.07675931623308242,
+    "week_of_year": 0.055751266821706114,
+    "week_cos": 0.02866005151158985
+  },
+  "leaderboard": [
+    {
+      "model": "Linear Regression",
+      "family": "Linear",
+      "feature_set": "A: calendar",
+      "RMSE": 4610.097,
+      "WAPE_7d": 44.667,
+      "WAPE_30d": 27.851,
+      "Total90_abs": 13.504,
+      "score": 2.75
+    },
+    {
+      "model": "Orthogonal Matching Pursuit",
+      "family": "Linear",
+      "feature_set": "B: calendar + lags",
+      "RMSE": 4624.676,
+      "WAPE_7d": 45.12,
+      "WAPE_30d": 30.276,
+      "Total90_abs": 14.438,
+      "score": 5.25
+    },
+    {
+      "model": "Lasso",
+      "family": "Linear",
+      "feature_set": "A: calendar",
+      "RMSE": 4630.625,
+      "WAPE_7d": 45.698,
+      "WAPE_30d": 30.478,
+      "Total90_abs": 13.458,
+      "score": 5.75
+    },
+    {
+      "model": "Lasso-LARS",
+      "family": "Linear",
+      "feature_set": "A: calendar",
+      "RMSE": 4630.627,
+      "WAPE_7d": 45.699,
+      "WAPE_30d": 30.478,
+      "Total90_abs": 13.458,
+      "score": 5.75
+    },
+    {
+      "model": "Ridge",
+      "family": "Linear",
+      "feature_set": "A: calendar",
+      "RMSE": 4631.163,
+      "WAPE_7d": 45.224,
+      "WAPE_30d": 29.063,
+      "Total90_abs": 14.429,
+      "score": 5.75
+    },
+    {
+      "model": "ARD Regression",
+      "family": "Linear",
+      "feature_set": "A: calendar",
+      "RMSE": 4631.487,
+      "WAPE_7d": 46.064,
+      "WAPE_30d": 30.597,
+      "Total90_abs": 14.154,
+      "score": 8.5
+    },
+    {
+      "model": "Orthogonal Matching Pursuit",
+      "family": "Linear",
+      "feature_set": "A: calendar",
+      "RMSE": 4633.92,
+      "WAPE_7d": 46.033,
+      "WAPE_30d": 30.803,
+      "Total90_abs": 13.754,
+      "score": 8.5
+    },
+    {
+      "model": "Bayesian Ridge",
+      "family": "Linear",
+      "feature_set": "A: calendar",
+      "RMSE": 4636.52,
+      "WAPE_7d": 45.53,
+      "WAPE_30d": 29.467,
+      "Total90_abs": 15.343,
+      "score": 8.75
+    },
+    {
+      "model": "PLS Regression",
+      "family": "Linear",
+      "feature_set": "A: calendar",
+      "RMSE": 4634.142,
+      "WAPE_7d": 46.262,
+      "WAPE_30d": 30.45,
+      "Total90_abs": 14.009,
+      "score": 8.75
+    },
+    {
+      "model": "Tweedie GLM (p=1.5)",
+      "family": "Robust / GLM",
+      "feature_set": "B: calendar + lags",
+      "RMSE": 4654.099,
+      "WAPE_7d": 47.848,
+      "WAPE_30d": 21.615,
+      "Total90_abs": 9.127,
+      "score": 9.5
+    },
+    {
+      "model": "Bayesian Ridge",
+      "family": "Linear",
+      "feature_set": "B: calendar + lags",
+      "RMSE": 4642.103,
+      "WAPE_7d": 46.228,
+      "WAPE_30d": 31.849,
+      "Total90_abs": 14.474,
+      "score": 12.0
+    },
+    {
+      "model": "Linear Regression",
+      "family": "Linear",
+      "feature_set": "B: calendar + lags",
+      "RMSE": 4625.682,
+      "WAPE_7d": 46.277,
+      "WAPE_30d": 32.703,
+      "Total90_abs": 23.452,
+      "score": 14.0
+    },
+    {
+      "model": "ARD Regression",
+      "family": "Linear",
+      "feature_set": "B: calendar + lags",
+      "RMSE": 4642.534,
+      "WAPE_7d": 47.398,
+      "WAPE_30d": 31.851,
+      "Total90_abs": 15.621,
+      "score": 14.75
+    },
+    {
+      "model": "Poisson GLM",
+      "family": "Robust / GLM",
+      "feature_set": "B: calendar + lags",
+      "RMSE": 4651.507,
+      "WAPE_7d": 47.966,
+      "WAPE_30d": 27.002,
+      "Total90_abs": 18.506,
+      "score": 15.0
+    },
+    {
+      "model": "Lasso",
+      "family": "Linear",
+      "feature_set": "B: calendar + lags",
+      "RMSE": 4641.647,
+      "WAPE_7d": 48.006,
+      "WAPE_30d": 35.254,
+      "Total90_abs": 16.914,
+      "score": 16.75
+    }
+  ],
+  "n_models_compared": 36,
+  "inference_seconds_90d": 0.006334066390991211,
+  "window_errors": [
+    {
+      "window": "05 Oct 2013 \u2013 02 Jan 2014",
+      "role": "validation",
+      "actual_total": 247099.45,
+      "Selected model": -34.79,
+      "BL: mean of all history": -62.75,
+      "BL: mean of last 365 days": -40.07,
+      "BL: mean of last 90 days": -21.66,
+      "BL: seasonal naive (same day last year)": -54.87
+    },
+    {
+      "window": "03 Jan 2014 \u2013 02 Apr 2014",
+      "role": "validation",
+      "actual_total": 203765.69,
+      "Selected model": 0.09,
+      "BL: mean of all history": -48.47,
+      "BL: mean of last 365 days": -10.58,
+      "BL: mean of last 90 days": 21.27,
+      "BL: seasonal naive (same day last year)": -33.53
+    },
+    {
+      "window": "03 Apr 2014 \u2013 01 Jul 2014",
+      "role": "validation",
+      "actual_total": 176139.23,
+      "Selected model": 8.53,
+      "BL: mean of all history": -36.07,
+      "BL: mean of last 365 days": 12.96,
+      "BL: mean of last 90 days": 15.68,
+      "BL: seasonal naive (same day last year)": -14.1
+    },
+    {
+      "window": "02 Jul 2014 \u2013 29 Sep 2014",
+      "role": "TEST",
+      "actual_total": 145571.42,
+      "Selected model": 71.42,
+      "BL: mean of all history": -19.52,
+      "BL: mean of last 365 days": 41.91,
+      "BL: mean of last 90 days": 21.0,
+      "BL: seasonal naive (same day last year)": 37.49
+    }
+  ]
+}

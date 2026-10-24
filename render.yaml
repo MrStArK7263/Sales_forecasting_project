@@ -1,0 +1,29 @@
+# Render Blueprint – creates both services from this repo.
+services:
+  - type: web
+    name: sales-forecast-api
+    runtime: docker
+    dockerfilePath: ./api/Dockerfile
+    dockerContext: ./api
+    healthCheckPath: /health
+    plan: free
+    envVars:
+      - key: MODEL_DIR
+        value: /app/artifacts
+      - key: MAX_HORIZON
+        value: "180"
+      - key: ALLOWED_ORIGINS
+        value: "*"
+      - key: LOG_LEVEL
+        value: INFO
+
+  - type: web
+    name: sales-forecast-ui
+    runtime: docker
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: ./frontend
+    plan: free
+    envVars:
+      - key: API_URL
+        # replace with the public URL of the API service after the first deploy
+        value: https://sales-forecast-api.onrender.com
